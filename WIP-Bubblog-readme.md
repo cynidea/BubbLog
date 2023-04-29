@@ -1,46 +1,50 @@
-# BubbleBox 1.0: Digital Controller
- The BubbleBox 1.0 is a digital controller for platform fighters and other games:
- 
-![image](Images/BubbleBox%20Black%20and%20Light%20Grey%20Hex%20Keycaps.jpg)
+# NOTICE: HEAVY WiP
+***This project probably won't be in working condition for a very long time. Please check back for future updates.***
 
+##TODO in hardware design
+- Modify backplate to fit the drastically-shrunken top panel
+- Actually start modelling the adafruit-breakout-fitted port (can't happen until the breakout board actually arrives....)
 
-# Important License Information
+##TODO in firmware
+- Have Nunchuk configuration on by default (change pinout in config)
+- Redo 3-button shortcuts for different game modes (there's no more Mod X/Y!)
+- Implement non-Nunchuk-less FGC mode invented by hell
+- Remove extraneous libraries (not so urgent)
 
-This project is licensed under the CERN-OHL-S v2 open source license. This is a "strongly reciprocal copyleft" license that allows free use of the files, but requires you to publish any modifications you make to the project under the same license, if you distribute your own files or sell versions that you produce. You are also compelled to link back to this github repository (https://github.com/UMS-Ultra/BubbleBox) in your own repository and/or where you sell them. Please check out the license.txt file to learn how you are allowed to use the files, and check out https://ohwr.org/cernohl for more information and CERNs FAQ.
+##TODO in repo
+- Actually publish 3d files once I have a finished design
+- PHOTOS HOLY SHIT SO MANY PHOTOS
+- Detailed instructions for actually remapping stuff in Haybox
+- Licensing (add date for modified file publication, double check w/ bloojay if it looks ok to her)
 
-# Discord Link
-[Unceremonious link to the UMS Ultra Discord server](https://discord.gg/zT5tZRG5Uq)
+# BubbLog
+The BubbLog is **(GOING TO BE)** a remix of the BubbleBox controller, a stickless controller designed for fighting games with analogue movement (i.e., *Super Smash Bros.* and other platform fighters). This remix essentially re-instates analogue movement by utilizing Nintendo's Nunchuk peripheral controller, while keeping the layout of the right-hand controls.
 
+There are **(GOING TO BE)** several layouts which vary by:
+- MX-Compatible Sockets VS. Socketless
+- Left-Handed VS. Right-Handed
+- Adafruit Nunchuk breakout board compatible VS. Direct undetachable wire
 
-# Installing and Updating Firmware
+Just like the original BubbleBox, BubbLog uses a specialized version of HayBox firmware: (TODO)
 
-To update the firmware on a BubbleBox, hold the Start button when you plug into your computer to boot it into it's firmware flashing mode. It will show up in your file explorer as a storage device like a USB Flash drive. When plugging in a new Pico into a computer for the first time, it will automatically boot in it's firmware flashing mode.
+# Finding Help Through Discord
+Keep in mind that I barely understand what I am doing with this project. This is very much the result of a clueless computer science student who fumbled their way into building stickless controllers as a hobby.
 
-![image](Images/Pico%20File%20Window.PNG)
+If you want general advice on wiring/3D-printing/soldering/control layout/etc. for stickless controllers, please consult the fine people in the following servers:
+- [Crane's Lab (stickless controllers designed for *Smash Bros.*/platform fighters)](https://discord.gg/S3qgZWD)
+- **[*UMS Ultra Discord server (the OG designer)](https://discord.gg/zT5tZRG5Uq)**
+- [Open Stick Foundation (more general stickless controller hub)](https://discord.gg/k2pxhke7q8)
 
-If your controller or doesn't boot into it's firmware mode under those conditions, hold the white "Bootsel" button on the Pico itself when plugging it in.
+If, after asking in any of these servers, you still need assistance (or it's something that truly can only be addressed by me), you may ping/DM me. I am present in all 3 servers under "Cynidea".
 
-![image](Images/Pico%20Bootsel%20Button.jpg)
+**Please do not bug UMS-Ultra/Bloojay with questions concerning anything BubbLog-specific** that isn't featured in the original BubbleBox design. I did not directly collaborate with her; she very kindly provided STEP files of her baby to the public, and I yoinked it and commited heinous technology crimes to make it work with the funnie Wii joystick.
 
-Once it's in the Firmware mode and you can access it's storage, simply drag and drop the firmware.uf2 file onto it. It's exactly like putting something on a USB Flash Drive.
+# Firmware
+## Installing and Updating 
+The instructions here will be the exact same as featured in the original repo: https://github.com/UMS-Ultra/BubbleBox
 
-![image](Images/Firmware%20Gif.gif)
-
-When done successfully, the LED on the Pico should glow Green:
-
-![image](Images/Pico%20Green%20LED.jpg)
-
-And your computer will make the noise that it makes when you plug in a new device. When this happens, the process is done and the controller is reflashed.
-
-To check that your controller is being recognized _as_ a controller, hit Win+R and run `joy.cpl` to open the USB Game Controller setup window:
-
-![image](Images/Running%20JoyCPL.PNG)
-
-And if you see "Pico" show up as a device, you've done it correctly.
-
-![image](Images/Pico%20Device%20Window.PNG)
-
-If not, who knows where you biffed it.
+## Remapping Controls
+[TODO] [Don't forget photos/gifs]
 
 
 # Controller Setup
@@ -50,11 +54,9 @@ To use Haybox firmware on Dolphin and Slippi, I recommend checking out Haystacks
 
 ## Console mode functions
 
-Haybox Firmware supports a wide variety of consoles, most of which it detects and sets automagically on it's own. When plugging into a PC, Wii, Gamecube, or N64, it should just work.
+This firmware is dead-simple plug-and-play on PC and consoles, with two exceptions: For the Nintendo Switch or a Brook Wingman, you must be holding 'X' as you plug in via USB. (This is not necessary if you're connected to the Switch via USB-C-to-Gamecube-adapter, but it's recommended to connect to the console via USB-to-USB anyways to avoid added latency.)
 
-But, to use on the Nintendo Switch, you have to hold 'X' on plug in. This is also required to work on a Brook Wingman.
-
-![image](Images/Switch%20Mode.jpg)
+[TODO: Add photo highlighting the 'X' button on BubbLog]
 
 ## Game Mode Selections
 
@@ -186,16 +188,14 @@ I dunno why, but the B0XX, Frame 1, and LBX all do this for some reason. Some sa
 
 ## Screws
 
-* 9x  M3x6mm Button Head Cap Screws
-* 9x  M3 Initeq Heatset Threaded Inserts (Other inserts can work too, but ymmv)
+* 5x  M3x6mm Button Head Cap Screws
+* 5x  M3 Initeq Heatset Threaded Inserts (Other inserts can work too, but ymmv)
 * 2x  M3x4mm Button Head Cap Screws or Socket Head Cap Screws
 * 2x  M2x6mm Socket Head Cap Screws or Button Head Cap Screws
 * 2x  M2 In-Sail Heatset Threaded Inserts (Optional)
 
-For the Split-Case versions, you will need some additional hardware:
-* +2x  M3x16mm Button Head Cap Screws
-* +2x  M3x8mm Button Head Cap Screws (Can be substituted for x1 6mm and x1 12mm if needed)
-* +4 M3 Initeq Heaset Threaded Inserts
+If you're using an adafruit adapter, you'll also need:
+(TODO: Figure out screwhole size for adafruit adapter)
 
 ## Electronic Components
 
@@ -340,15 +340,6 @@ Shown here with a slightly exaggerated wire so you can see the labels on the Pic
 
  ![image](Images/BubbleBox%20Light%20Blue%20and%20Purple%20Hex%20Keycaps.jpg)
  ___
-## Adding Gription
-
-When resting the controller on your lap, you might find that with bare plastic it's a bit slick and slips around. The entire controller will probably weigh less than a pound, as all of mine do, so you're not getting any help there either. You have a couple options though. So far, my #1 recommended solution if you're doing this at home is to get some 8x12 sheets of adhesive EVA Foam Paper, and cut out a sheet that fits the bottom panel, and slap it on the bottom. I use this material for my controllers, except I laser cut it.
-
-![image](Images/Cut%20EVA%20Foam%20Grip%20Sheet.jpg)
-
-Alternatively, you could also get some phone grip tape or other rubbery grip tapes. This is generally a soft-ish rubber material (not like skateboard sandpaper grip tape, unless you're into that I suppose). I find this doesn't work as well as the EVA Foam, but it's another option. Here is a photo of one of my First BubbleBoxes with some adhesive cellphone grippy pad things.
-
-![image](Images/Old%20BubbleBox%20Purple%20Phone%20Grip%20Tape.jpg)
 
 # Contributions
 [Haybox Firmware](https://github.com/JonnyHaystack/HayBox) from [Haystack the Goat](https://github.com/JonnyHaystack)
@@ -356,3 +347,11 @@ Alternatively, you could also get some phone grip tape or other rubbery grip tap
 [Hadoe](https://github.com/HTangl) and [Crane](https://github.com/Crane1195) for the [Bird-D USB-C Breakout Board](https://github.com/HTangl/Model-UD)
 
 Cranes Lab Discord server
+
+# Important License Information
+This is a modification of a project licensed under CERN-OHL-S v2. In order to meet this license's requirements, BubbLog is itself licensed under CERN-OHL-S v2. 
+
+Modifications officially began on May 23, 2023, and modified designs were published on [TODO: INSERT DATE HERE]; changes include the removal of all digital "directional" inputs, a drastic truncation in length, a change in placement of the USB-C breakout and microcontroller slots, rearrangement of the three "option" inputs, and a port opening for Nintendo's "Nunchuk" accessory.
+
+## Original License Notice
+This project is licensed under the CERN-OHL-S v2 open source license. This is a "strongly reciprocal copyleft" license that allows free use of the files, but requires you to publish any modifications you make to the project under the same license, if you distribute your own files or sell versions that you produce. You are also compelled to link back to this github repository (https://github.com/UMS-Ultra/BubbleBox) in your own repository and/or where you sell them. Please check out the license.txt file to learn how you are allowed to use the files, and check out https://ohwr.org/cernohl for more information and CERNs FAQ.
